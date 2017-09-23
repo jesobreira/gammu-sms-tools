@@ -1,5 +1,7 @@
-# gammu-long-sms
-Send long text SMS (more than 170 characters) using only gammu, without gammu-smsd.
+# Gammu SMS Tools
+**gammu-long-sms**: Send long text SMS (more than 170 characters) using only gammu, without gammu-smsd.
+
+**gammu-flash-sms**: Send flash SMS (class 0, message that shows as popup and does not get saved on the inbox) using gammu
 
 Based on [Gammu's long SMS example](https://github.com/gammu/gammu/blob/master/docs/examples/long-sms.c).
 
@@ -50,3 +52,7 @@ gammu-flash-sms 011987654321 "Lorem ipsum dolor sit amet, consectetur adipiscing
 ## Notes
 
 Although this lib allows sending flash SMS with more than 170 characters, it's not recommended to overpass this limit since we can't grant that all devices are able to show long flash messages.
+
+Flash SMS shall only be used for emergency situations such as natural disasters announcements, and never as promotional or advertising messaging.
+
+I'm not and Gammu developers aren't responsible for the misuse of any of these tools or any consequence that the usage of these tools may carry. You may be blocked by your provider if they find out you're misusing your SMS service.
