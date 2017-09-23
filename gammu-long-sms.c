@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 {
 
 	if(argc!=3) {
-		return printf("Usage: long-sms <number> <message>\nhttps://github.com/jesobreira/gammu-long-sms\n");
+		return printf("Usage: long-sms <number> <message>\nhttps://github.com/jesobreira/gammu-sms-tools\n");
 	}
 
 	GSM_MultiSMSMessage SMS;
