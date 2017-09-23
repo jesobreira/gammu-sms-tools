@@ -14,13 +14,14 @@ You must have installed gammu and libgammu-dev
 
 ```
 sudo apt-get install gammu
-sudo apt-get install libgammu-dev`
+sudo apt-get install libgammu-dev
 ```
 
-Finally, compile it:
+Finally, compile the needed files:
 
 ```
 gcc gammu-long-sms.c -o gammu-long-sms `pkg-config --cflags --libs gammu`
+gcc gammu-flash-sms.c -o gammu-flash-sms `pkg-config --cflags --libs gammu`
 ```
 
 ## Installing
@@ -29,16 +30,23 @@ The binary can be used standalone. If you want to make it accessible from any fo
 
 ```
 sudo mv gammu-long-sms /usr/bin
+sudo mv gammu-flash-sms /usr/bin
 ```
 
 ## Usage
 
 ```
 gammu-long-sms <number> <message>
+gammu-flash-sms <number> <message>
 ```
 
 Example:
 
 ```
-gammu-long-sms 011987654321 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur gravida diam et tempor. Suspendisse porta molestie ligula, non rhoncus nulla tincidunt et. Donec dapibus lobortis neque, eu bibendum ex. Nullam non venenatis augue. Vestibulum sodales, lectus vel faucibus lacinia, eros justo bibendum leo, ut sodales lectus orci sit amet dui. Maecenas nec sem lorem. Donec tempor mi ultrices, elementum sapien id, porttitor magna. Fusce sagittis facilisis mollis. Nulla id ante at urna massa nunc."
+gammu-long-sms 011987654321 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur gravida diam et tempor. Suspendisse porta molestie ligula, non rhoncus nulla tincidunt et."
+gammu-flash-sms 011987654321 "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 ```
+
+## Notes
+
+Although this lib allows sending flash SMS with more than 170 characters, it's not recommended to overpass this limit since we can't grant that all devices are able to show long flash messages.
